@@ -1,0 +1,43 @@
+{% extends 'main/base.html' %}
+
+{% load static %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block content %}
+
+<br>
+<div class="row">
+    <div class="col-md-5">
+        <h5>clients</h5>
+        <hr>
+        <div class="card card-body">
+            <a href="" class="btn btn-primary btn-sm btn-block">Creer un client</a>
+            <table class="table table-sm">
+                <tr>
+                    <th></th>
+                    <th>Client</th>
+                    <th>Commande</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="col-md-7">
+        <h5>Les commandes</h5>
+        <hr>
+        <div class="card card-body">
+            <a href="" class="btn btn-primary btn-block btn-sm">Ajouter une commade</a>
+            <table class="table table-sm">
+                <tr>
+                    <th>Produit</th>
+                    <th>Date_cmde</th>
+                    <th>Statut</th>
+                    <th>Mise a jours</th>
+                    <th>Suprimer</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
