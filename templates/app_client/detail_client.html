@@ -1,0 +1,66 @@
+{% extends 'main/base.html' %}
+
+{% load static %}
+
+{% block title %}Detail_client{% endblock %}
+
+{% block content %}
+
+
+<hr>
+<div class="row">
+    <div class="col-md">
+        <div class="card card-body">
+            <h5>client</h5>
+            <hr>
+            <a href="" class="btn btn-outline-info btn-sm btn-block">Modifier le client</a>
+            <a href="" class="btn btn-outline-danger btn-sm btn-block">Supprimer le client</a>
+        </div>
+    </div>
+
+    <div class="col-md">
+        <div class="card card-body">
+            <h5>Informations</h5>
+            <hr>
+            <p>Noms</p>
+            <p>Telephone</p>
+           
+        </div>
+    </div>
+
+    <div class="col-md">
+        <div class="card card-body">
+            <h5>Total des commandes</h5>
+            <hr>
+            <h1 class="text-center"></h1>
+        </div>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col">
+        <div class="card card-body">
+            <form action="">
+                <button class="btn btn-primary" type="submit">filter</button>
+            </form>
+        </div>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-md">
+        <div class="card card-body">
+            <table class="table table-sm">
+                <tr>
+                    <th>Produit</th>
+                    <th>Cartegories</th>
+                    <th>Date_cmde</th>
+                    <th>Statuts</th>
+                    <th>Mise a jours</th>
+                    <th>Supprimer</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

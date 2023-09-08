@@ -1,0 +1,1 @@
+defaultapp_config = "app_produit.apps.app_produitconfig"
