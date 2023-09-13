@@ -1,0 +1,25 @@
+{% extends 'main/base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% load static %}
+
+{% block title %}Supprimer_cmde{% endblock %}
+
+{% block content %}
+<br>
+<div class="row mt-12">
+    <div class="col-md">
+        <div class="card card-body">
+            <h1>Vouslez-vous Supprimer ce produit </h1>
+    <form action="{% url 'supprimer-produit' items.id %}" method="post">
+        {% csrf_token %}
+        <a href="{% url 'accueil' %}" class="btn btn-success btn-sm">Non</a>
+        <button type="submit" class="btn btn-danger btn-sm">Oui</button>
+    </form>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

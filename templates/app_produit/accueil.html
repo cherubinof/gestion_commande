@@ -39,14 +39,16 @@
         <h5>Les commandes</h5>
         <hr>
         <div class="card card-body">
-            <a href="" class="btn btn-primary btn-block btn-sm">Ajouter une commade</a>
+            <a href="{% url 'ajout-cmde' %}" class="btn btn-primary btn-block btn-sm">Ajouter une commade</a>
             <table class="table table-sm">
                 <tr>
                     <th>Client</th>
                     <th>Produit</th>
                     <th>Date</th>
+                    <th>Qte</th>
+                    <th>Paye</th>
                     <th>Status</th>
-                    <th>Mise a jours</th>
+                    
                     
                 </tr>
                 {% for cmd in commande %}
@@ -55,8 +57,16 @@
                     <td>{{cmd.client}}</td>
                     <td>{{cmd.produit}}</td>
                     <td>{{cmd.date_cmde}}</td>
+                    <td class="text-info">{{cmd.quantite}}</td>
+                <td>
+                    {% if cmd.paye %}
+                    <h6 class="text-info">Oui</h6>
+                    {% else %}
+                    <h6 class="text-danger">Non</h6>
+                    {% endif %}
+                </td>
                     <td>{{cmd.status}}</td>
-                    <td><a href="" class="btn btn-primary btn-sm">Modifier</a> <a href="" class="btn btn-danger btn-sm">Supprimer</a></td>
+                    
                     
                     
                 </tr>
