@@ -1,6 +1,12 @@
 from django.contrib import admin
-from.models import Produit
+from.models import Produit,Tag
 
 # Register your models here.
 
-admin.site.register(Produit)
+
+class ProduitAdmin(admin.ModelAdmin):
+    list_display = ['code','nom','stock','prix',]
+    list_filter = ['nom']
+admin.site.register(Produit,ProduitAdmin)
+
+admin.site.register(Tag)

@@ -14,7 +14,7 @@
             <h5>client</h5>
             <hr>
             <a href="" class="btn btn-outline-info btn-sm btn-block">Modifier le client</a>
-            <a href="" class="btn btn-outline-danger btn-sm btn-block">Supprimer le client</a>
+            <a href="" class="btn btn-outline-danger btn-sm btn-block mb-2">Supprimer le client</a>
         </div>
     </div>
 
@@ -22,8 +22,8 @@
         <div class="card card-body">
             <h5>Informations</h5>
             <hr>
-            <p>Noms</p>
-            <p>Telephone</p>
+            <p>Nom: {{client.noms}}</p>
+            <p>Telephone: {{client.telephone}}</p>
            
         </div>
     </div>
@@ -32,7 +32,7 @@
         <div class="card card-body">
             <h5>Total des commandes</h5>
             <hr>
-            <h1 class="text-center"></h1>
+            <h1 class="text-center" style="padding: 10px;">{{commande_total}}</h1>
         </div>
     </div>
 </div>
@@ -41,7 +41,7 @@
     <div class="col">
         <div class="card card-body">
             <form action="">
-                <button class="btn btn-primary" type="submit">filter</button>
+                <button class="btn btn-primary" type="submit">filtre</button>
             </form>
         </div>
     </div>
@@ -53,12 +53,29 @@
             <table class="table table-sm">
                 <tr>
                     <th>Produit</th>
-                    <th>Cartegories</th>
                     <th>Date_cmde</th>
+                    <th>Qte</th>
+                    <th>paye</th>
                     <th>Statuts</th>
                     <th>Mise a jours</th>
-                    <th>Supprimer</th>
                 </tr>
+                {% for commande in commande %}
+                <tr>
+                    <td>{{commande.produit}}</td>
+                    <td>{{commande.date_cmde}}</td>
+                    <td>{{commande.quantite}}</td>
+                    <td>
+                        {% if commande.paye %}
+                        <h6 class="text-primary">Oui</h6>
+                        {% else %}
+                        <h6 class="text-danger">Non</h6>
+                        {% endif %}
+
+                    </td>
+                    <td>{{commande.status}}</td>
+                    <td><a href="" class="btn btn-primary btn-sm">Modifier</a> <a href="" class="btn btn-danger btn-sm">Supprimer</a></td>
+                </tr>
+                {% endfor %}
             </table>
         </div>
     </div>

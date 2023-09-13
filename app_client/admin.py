@@ -3,4 +3,8 @@ from.models import Client
 
 # Register your models here.
 
-admin.site.register(Client)
+
+class ClientAdmin(admin.ModelAdmin):
+    list_display = ['noms','telephone','ville']
+    list_filter = ['noms']
+admin.site.register(Client, ClientAdmin)

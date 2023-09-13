@@ -1,0 +1,83 @@
+{% extends 'main/base.html' %}
+
+{% load static %}
+
+{% block title %}list_cmde{% endblock %}
+
+{% block content %}
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-md">
+            <div class="card card-body">
+                <h5>Produit</h5>
+                <hr>
+                <a href="" class="btn btn-outline-info btn-sm btn-block">Ajouter la commande</a>
+                <a href="" class="btn btn-outline-danger btn-sm btn-block mb-2">Supprimer les commandes</a>
+            </div>
+        </div>
+    
+        
+    
+        <div class="col-md">
+            <div class="card card-body">
+                <h5>Total des commandes</h5>
+                <hr>
+                <h1 class="text-center" style="padding: 10px;">{{total_commande}}</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="card card-body">
+                <form action="">
+                    <button class="btn btn-primary" type="submit">filtre</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br>
+<div class="container">
+    <div class="card card-body">
+        
+        <table class="table table-sm">
+            <tr>
+                <th></th>
+                <th>Client</th>
+                <th>Produit</th>
+                <th>Date</th>
+                <th>Qte</th>
+                <th>paye</th>
+                <th>Status</th>
+                <th>Mise a jours</th>
+            </tr>
+            {% for cmd in commande %}
+            <tr>
+                <td><input type="checkbox"></td>
+                <td class="text-info">{{cmd.client}}</td>
+                <td class="text-info">{{cmd.produit}}</td>
+                <td class="text-info">{{cmd.date_cmde}}</td>
+                <td class="text-info">{{cmd.quantite}}</td>
+                <td>
+                    {% if cmd.paye %}
+                    <h6 class="text-info">Oui</h6>
+                    {% else %}
+                    <h6 class="text-danger">Non</h6>
+                    {% endif %}
+                </td>
+                <td class="text-info">{{cmd.status}}</td>
+                <td><a href="" class="btn btn-primary btn-sm">Modifier</a> <a href="" class="btn btn-danger btn-sm">Supprimer</a></td>
+                
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+
+{% endblock %}

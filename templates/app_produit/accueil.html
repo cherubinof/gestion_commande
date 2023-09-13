@@ -15,10 +15,23 @@
             <a href="" class="btn btn-primary btn-sm btn-block">Creer un client</a>
             <table class="table table-sm">
                 <tr>
-                    <th></th>
-                    <th>Client</th>
-                    <th>Commande</th>
+                    <th>ID</th>
+                    <th>Noms</th>
+                    <th>Telephone</th>
+                    <th>Ville</th>
+                    <th>Detail</th>
                 </tr>
+                {% for cl in client %}
+                <tr>
+                    
+                    <td>{{cl.id}}</td>
+                    <td>{{cl.noms}}</td>
+                    <td>{{cl.telephone}}</td>
+                    <td>{{cl.ville}}</td>
+                    <td><a href="{% url 'detail-client' cl.id %}" class="btn btn-primary btn-sm">Detail</a></td>
+                    
+                </tr>
+                {% endfor %}
             </table>
         </div>
     </div>
@@ -29,12 +42,25 @@
             <a href="" class="btn btn-primary btn-block btn-sm">Ajouter une commade</a>
             <table class="table table-sm">
                 <tr>
+                    <th>Client</th>
                     <th>Produit</th>
-                    <th>Date_cmde</th>
-                    <th>Statut</th>
+                    <th>Date</th>
+                    <th>Status</th>
                     <th>Mise a jours</th>
-                    <th>Suprimer</th>
+                    
                 </tr>
+                {% for cmd in commande %}
+                <tr>
+                    
+                    <td>{{cmd.client}}</td>
+                    <td>{{cmd.produit}}</td>
+                    <td>{{cmd.date_cmde}}</td>
+                    <td>{{cmd.status}}</td>
+                    <td><a href="" class="btn btn-primary btn-sm">Modifier</a> <a href="" class="btn btn-danger btn-sm">Supprimer</a></td>
+                    
+                    
+                </tr>
+                {% endfor %}
             </table>
         </div>
     </div>
