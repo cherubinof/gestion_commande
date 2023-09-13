@@ -1,6 +1,8 @@
 {% extends 'main/base.html' %}
 
+{% load crispy_forms_tags %}
 {% load static %}
+
 
 {% block title %}Ajouterproduit{% endblock %}
 
@@ -13,7 +15,7 @@
 <form action="" method="post">
     {% csrf_token %}
 
-    {{form}}
+    {{ form }}
 
     <input type="submit" name="enregistrer" value="enregistrer">
 </form>

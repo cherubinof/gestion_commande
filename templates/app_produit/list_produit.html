@@ -52,7 +52,7 @@
                 <td class="text-info">{{pr.prix}}</td>
                 
 
-                <th><a href="" class="btn btn-primary btn-sm">Modifier</a> <a href="" class="btn btn-danger btn-sm">Supprimer</a></th>
+                <th><a href="{% url 'modifier-produit' pr.id %}" class="btn btn-primary btn-sm">Modifier</a> <a href="{% url 'supprimer-produit' pr.id %}" class="btn btn-danger btn-sm">Supprimer</a></th>
                 
             </tr>
             {% endfor %}

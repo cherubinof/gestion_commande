@@ -1,0 +1,17 @@
+{% extends 'main/base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% load static %}
+
+{% block title %}Supprimer_produit{% endblock %}
+
+{% block content %}
+<h1>Vouslez-vous Supprimer ce produits </h1>
+<form action="{% url 'supprimer-produit' items.id %}" method="post">
+    {% csrf_token %}
+    <a href="{% url 'accueil' %}" class="btn btn-success btn-sm">Non</a>
+    <button type="submit" class="btn btn-danger btn-sm">Oui</button>
+</form>
+
+{% endblock %}

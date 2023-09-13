@@ -37,3 +37,28 @@ def ajout_produit(request):
         'form':form
     }
     return render(request,'app_produit/ajout_produit.html',context)
+
+
+def modifier_produit(request, pk):
+    produit = Produit.objects.get(id=pk)
+    if request.method == 'POST':
+        form = ProduitForm(request.POST, instance=produit)
+        if form.is_valid():
+            form.save()
+            return redirect('list-produit')
+    else:
+        form = ProduitForm(instance=produit)
+    context = {
+        'form':form
+    }
+    return render(request,'app_produit/modifier_produit.html',context)
+
+def supprimer_produit(request,pk):
+    produit = Produit.objects.get(id=pk)
+    if request.method == 'POST':
+        produit.delete()
+        return redirect('list-produit')
+    context = {
+        'items':produit
+    }
+    return render(request,'app_produit/supprimer_produit.html',context)
