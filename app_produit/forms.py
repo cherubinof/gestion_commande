@@ -7,3 +7,4 @@ class ProduitForm(ModelForm):
     class Meta:
         model = Produit
         fields = '__all__'
+        

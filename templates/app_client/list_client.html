@@ -12,7 +12,7 @@
             <div class="card card-body bg-info">
                 <h5>Client</h5>
                 <hr>
-                <a href="" class="btn btn-outline-primary btn-sm btn-block text-light">Ajouter le client</a>
+                <a href="{% url 'ajout-client' %}" class="btn btn-outline-primary btn-sm btn-block text-light">Ajouter le client</a>
                 <a href="" class="btn btn-outline-danger btn-sm btn-block mb-2 text-light">Supprimer les clients</a>
             </div>
         </div>
@@ -47,7 +47,7 @@
             <td class="">{{cl.noms}}</td>
             <td class="">{{cl.telephone}}</td>
             <td class="">{{cl.ville}}</td>
-            <td><a href="" class="btn btn-primary btn-sm">Modifier</a> <a href="" class="btn btn-danger btn-sm">Supprimer</a></td>
+            <td><a href="{% url 'modifier-client' cl.id %}" class="btn btn-primary btn-sm">Modifier</a> <a href="{% url 'supprimer-client' cl.id %}" class="btn btn-danger btn-sm">Supprimer</a></td>
             
         </tr>
         {% endfor %}
