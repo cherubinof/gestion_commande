@@ -1,0 +1,27 @@
+{% extends 'main/base.html' %}
+
+{% load static %}
+
+{% block title %}Deconnexion{% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<br>
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-6 offset-md-3">
+            <div class="border bg-white p-3">
+                <h3>Deconnexion</h3>
+                <hr>
+                <div class="alert alert-danger">
+                    <h4>Est-vous sure de vous deconnecter</h4>
+                </div>
+                <a href="{% url 'connexion' %}" class="btn btn-danger">Deconnexion</a>
+               
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

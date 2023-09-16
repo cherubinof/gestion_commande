@@ -1,0 +1,27 @@
+{% extends 'main/base.html' %}
+
+{% load static %}
+
+{% block title %}Connexion{% endblock %}
+
+{% block content %}
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="border bg-white p-3">
+                <h3>Connexion</h3>
+                <form action="" method="post">
+                    {% csrf_token %}
+                    {{form}}
+                    <input type="submit" class="btn btn-primary" value="connexion">
+                    <a href="url 'compte' ">inscription</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}

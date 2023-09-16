@@ -51,18 +51,23 @@
                 
                 {% if user.is_authenticated %}
                 <li class="nav-item mx-2">
-                  <a href="" class="nav-link ">
+                  <a href="{% url 'logout' %}" class="nav-link ">
                       Deconnexion
                   </a>
               </li>
+              <li class="nav-item mx-2">
+                <a href="" class="nav-link ">
+                    {{request.user.username}}
+                </a>
+            </li>
               {% else %}
                   <li class="nav-item mx-2">
-                      <a href="" class="nav-link ">
+                      <a href="{% url 'connexion' %}" class="nav-link ">
                           Connexion
                       </a>
                   </li>
                   <li class="nav-item mx-2">
-                      <a href="{% url 'inscription' %}" class="nav-link ">
+                      <a href="" class="nav-link ">
                           Compte
                       </a>
                   </li>
