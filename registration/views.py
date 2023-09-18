@@ -3,7 +3,7 @@ from.forms import InscriptionForm
 
 # Create your views here.
 
-def Inscription(request):
+def register(request):
     if request.method == 'POST':
         form = InscriptionForm(request.POST)
         if form.is_valid():
