@@ -7,4 +7,5 @@ urlpatterns = [
     path('ajout_cmde',views.ajout_cmde,name='ajout-cmde'),
     path('modifier_cmde/<int:pk>',views.modifier_cmde,name='modifier-cmde'),
     path('supprimer_cmde/<int:pk>',views.supprimer_cmde,name='supprimer-cmde'),
+    path('stat',views.stat,name='stat'),
 ]

@@ -49,3 +49,7 @@ def supprimer_cmde(request,pk):
         'items':commande
     }
     return render(request,'app_cmde/supprimer_cmde.html',context)
+
+
+def stat(request):
+    return render(request,'app_cmde/stat.html')
