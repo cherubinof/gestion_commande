@@ -8,7 +8,7 @@ from.forms import ProduitForm
 
 def accueil(request):
     client = Client.objects.all()
-    commande = Commande.objects.all()
+    commande = Commande.objects.all().order_by('-id')
     context = {
         'client':client,
         'commande':commande
@@ -17,7 +17,7 @@ def accueil(request):
 
 
 def list_produit(request):
-    produit = Produit.objects.all()
+    produit = Produit.objects.all().order_by('-id')
     produit_total = produit.count()
     context = {
         'produit':produit,

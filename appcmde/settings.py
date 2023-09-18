@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'app_cmde',
     'app_produit',
     'app_client',
+    'app_facture',
     'registration',
     'crispy_forms',
     

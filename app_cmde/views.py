@@ -5,7 +5,7 @@ from.forms import CommadeForm
 # Create your views here.
 
 def list_cmde(request):
-    commande = Commande.objects.all()
+    commande = Commande.objects.all().order_by('-id')
     total_commande = commande.count()
     context = {
         'commande':commande,

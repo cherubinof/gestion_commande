@@ -13,8 +13,8 @@
         <div class="card card-body">
             <h5>client</h5>
             <hr>
-            <a href="" class="btn btn-outline-info btn-sm btn-block">Modifier le client</a>
-            <a href="" class="btn btn-outline-danger btn-sm btn-block mb-2">Supprimer le client</a>
+            <a href="{% url 'facture' %}" class="btn btn-outline-info btn-sm btn-block">Facture du client</a>
+            <a href="" class="btn btn-outline-danger btn-sm btn-block mb-2">Supprimer les commandes</a>
         </div>
     </div>
 
@@ -52,6 +52,7 @@
         <div class="card card-body">
             <table class="table table-sm">
                 <tr>
+                    <th></th>
                     <th>Produit</th>
                     <th>Date_cmde</th>
                     <th>Qte</th>
@@ -61,6 +62,7 @@
                 </tr>
                 {% for commande in commande %}
                 <tr>
+                    <td><input type="checkbox"></td>
                     <td>{{commande.produit}}</td>
                     <td>{{commande.date_cmde}}</td>
                     <td>{{commande.quantite}}</td>

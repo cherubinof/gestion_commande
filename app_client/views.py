@@ -7,7 +7,7 @@ from.forms import clientForm
 
 
 def list_client(request):
-    client = Client.objects.all()
+    client = Client.objects.all().order_by('-id')
     total_client = client.count()
     context = {
         'client':client,
