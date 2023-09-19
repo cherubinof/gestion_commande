@@ -27,3 +27,29 @@ def ajout_facture(request):
         'form':form
     }
     return render(request,'app_facture/ajout_facture.html',context)
+
+
+def modifire_facture(request,pk):
+    facture = Facture.objects.get(id=pk)
+    if request.method == 'POST':
+        form = FactureForm(request.POST,instance=facture)
+        if form.is_valid():
+            form.save()
+            return redirect('facture')
+    else:
+        form = FactureForm(instance=facture)
+    context = {
+        'form':form
+    }
+    return render(request,'app_facture/modifier_facture.html',context)
+
+
+def supprimer_facture(request,pk):
+    facture = Facture.objects.get(id=pk)
+    if request.method == 'POST':
+        facture.delete()
+        return redirect('facture')
+    context = {
+        'tems':facture
+    }
+    return render(request,'app_facture/supprimer_facture.html',context)
