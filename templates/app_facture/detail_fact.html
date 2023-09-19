@@ -1,0 +1,134 @@
+{% extends 'main/base.html' %}
+
+{% load static %}
+
+{% block title %}detail_fact{% endblock %}
+
+{% block content %}
+
+
+<br>
+<div class="container">
+    <div class="row">
+        <a class="btn col-md-4 btn-primary">
+            Ajouter Facture <span class="badge text-bg-scondary"></span>
+        </a>
+
+        <a class="btn col-md-4">
+            <span class="badge text-bg-scondary"></span>
+        </a>
+
+        <a href="" class="btn col-md-4 btn-primary">
+            Ajouter Clients <span class="badge text-bg-scondary"></span>
+        </a>
+    </div>
+    <br><br>
+    <div class="form-group">
+        <input type="text" id="search" class="form-control" placeholder="search">
+    </div><br>
+    <div>
+        <table class="table table-striped-columns">
+            <thead>
+                <tr>
+                    <th scope="col" class="text-primary">#</th>
+                    <th scope="col" class="text-primary">Noms</th>
+                    <th scope="col" class="text-primary">Date</th>
+                    <th scope="col" class="text-primary">Total</th>
+                    <th scope="col" class="text-primary">Paye</th>
+                    <th scope="col" class="text-primary">Type facture</th>
+                    <th scope="col" class="text-primary">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                <tr>
+                    <td scope="row" class="text-primary"></td>
+                    <td class="text-primary"></td>
+                    <td class="text-primary"></td>
+                    <td class="text-primary"></td>
+                    <td class="text-primary">
+                        
+                        
+                        
+                    </td>
+                    <td class="text-primary"></td>
+                    <td>
+                        <a href="" title="detail" class="badge text-white bg-success btn">Detail</a>
+
+                        <button id="btn-invoice_mod" type="button" data-bs-toggle="modal" data-bs-target="#modifier" class="badge text-white bg-primary" title="modifier" data-id="" data-client="">
+                            Modifier
+                        </button>
+
+                        <button id="btn-invoice_sup" type="button" data-toggle="modal" data-target="#supprimer" class="badge text-white bg-danger" title="supprimer" data-id="" data-client="">
+                            Supprimer
+                        </button>
+                    </td>
+                </tr>
+                
+            </tbody>
+        </table>
+    </div>
+</div>
+
+ <!-- modal modifier  -->
+<!-- <div class="modal-fade" id="modifier" tabindex="-1" role="dialog" aria-labelledby="exempleModalLabel" aria-hidden="True"> 
+    <div class="modale-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-dark text-center" id="exempleModalLabel">Modifier</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form method="post">
+                    <div class="modal-body">
+                        <input name="id_modifier" type="hidden" id="id_modifier"> 
+                        <label id="label_id" class="text-dark checkbox-inline"> <strong id="strong_id">facture a ete payes</strong></label>
+
+                        <input name="modifier" type="radio" id="html" value="True">
+                        <label class="text-dark bg-primary" for="html">yes</label>
+
+                        <input name="modifier" type="radio" id="css" value="False">
+                        <label class="text-white bg-danger" for="css">no</label><br>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">close</button>
+                        <button type="submit" class="btn btn-primary">save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<br> -->
+
+<!-- modal modifier 
+<div class="modal-fade" id="supprimer" tabindex="-1" role="dialog" aria-labelledby="exempleModalLabel" aria-hidden="True">
+    <div class="modale-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-dark text-center" id="exempleModalLabel">Supprimer</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form method="post">
+                    <div class="modal-body">
+                        <input name="id_supprimer" type="hidden" id="id_supprimer"> 
+                        <label id="label_id" class="text-dark checkbox-inline"> <strong id="strong_id">facture a ete payes</strong></label>
+
+                       
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">close</button>
+                        <button type="submit" class="btn btn-primary">supprimer</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>-->
+
+{% endblock %}

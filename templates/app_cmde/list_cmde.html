@@ -72,7 +72,7 @@
                     {% endif %}
                 </td>
                 <td class="text-info">{{cmd.status}}</td>
-                <td><a href="{% url 'modifier-cmde' cmd.id %}" class="btn btn-primary btn-sm">Modifier</a> <a href="{% url 'supprimer-cmde' cmd.id %}" class="btn btn-danger btn-sm">Supprimer</a></td>
+                <td><a href="{% url 'modifier-cmde' cmd.id %}" class="btn btn-primary btn-sm badge">Modifier</a> <a href="{% url 'supprimer-cmde' cmd.id %}" class="badge btn btn-danger btn-sm">Supprimer</a></td>
                 
             </tr>
             {% endfor %}

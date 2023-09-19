@@ -53,3 +53,7 @@ def supprimer_facture(request,pk):
         'tems':facture
     }
     return render(request,'app_facture/supprimer_facture.html',context)
+
+
+def detail_fact(request):
+    return render(request,'app_facture/detail_fact.html')

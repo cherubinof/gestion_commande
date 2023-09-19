@@ -9,21 +9,21 @@
 <div class="container">
     <div class="row">
         <div class="col-md">
-            <div class="card card-body bg-info">
+            <div class="card card-body ">
                 <h5>Client</h5>
                 <hr>
-                <a href="{% url 'ajout-client' %}" class="btn btn-outline-primary btn-sm btn-block text-light">Ajouter le client</a>
-                <a href="" class="btn btn-outline-danger btn-sm btn-block mb-2 text-light">Supprimer les clients</a>
+                <a href="{% url 'ajout-client' %}" class="btn btn-outline-primary btn-sm btn-block ">Ajouter le client</a>
+                <a href="" class="btn btn-outline-danger btn-sm btn-block mb-2 ">Supprimer les clients</a>
             </div>
         </div>
     
         
     
         <div class="col-md">
-            <div class="card card-body bg-info">
+            <div class="card card-body ">
                 <h5>Total des clients</h5>
                 <hr>
-                <h1 class="text-center text-light" style="padding: 10px;">{{total_client}}</h1>
+                <h1 class="text-center " style="padding: 10px;">{{total_client}}</h1>
             </div>
         </div>
     </div>
@@ -31,7 +31,7 @@
 
 <hr>
 <div class="container">
-    <div class="card card-body bg-info">
+    <div class="card card-body ">
         
     <table class="table table-sm">
         <tr>
@@ -47,7 +47,7 @@
             <td class="">{{cl.noms}}</td>
             <td class="">{{cl.telephone}}</td>
             <td class="">{{cl.ville}}</td>
-            <td><a href="{% url 'modifier-client' cl.id %}" class="btn btn-primary btn-sm">Modifier</a> <a href="{% url 'supprimer-client' cl.id %}" class="btn btn-danger btn-sm">Supprimer</a></td>
+            <td><a href="{% url 'modifier-client' cl.id %}" class="badge btn btn-primary btn-sm">Modifier</a> <a href="{% url 'supprimer-client' cl.id %}" class="badge btn btn-danger btn-sm">Supprimer</a></td>
             
         </tr>
         {% endfor %}

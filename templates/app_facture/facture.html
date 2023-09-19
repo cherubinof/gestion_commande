@@ -10,21 +10,21 @@
 <div class="container">
     <div class="row">
         <div class="col-md">
-            <div class="card card-body bg-info">
+            <div class="card card-body ">
                 <h5>Facture</h5>
                 <hr>
-                <a href="{% url 'ajout-facture' %}" class="btn btn-outline-primary btn-sm btn-block text-light">Ajouter une facure</a>
-                <a href="" class="btn btn-outline-danger btn-sm btn-block mb-2 text-light">Supprimer les factures</a>
+                <a href="{% url 'ajout-facture' %}" class="btn btn-outline-primary btn-sm btn-block">Ajouter une facure</a>
+                <a href="" class="btn btn-outline-danger btn-sm btn-block mb-2 ">Supprimer les factures</a>
             </div>
         </div>
     
         
     
         <div class="col-md">
-            <div class="card card-body bg-info">
+            <div class="card card-body ">
                 <h5>Total des factures</h5>
                 <hr>
-                <h1 class="text-center text-light" style="padding: 10px;">{{facture_count}}</h1>
+                <h1 class="text-center " style="padding: 10px;">{{facture_count}}</h1>
             </div>
         </div>
     </div>
@@ -32,7 +32,7 @@
 
 <hr>
 <div class="container">
-    <div class="card card-body bg-info">
+    <div class="card card-body ">
         
     <table class="table table-sm">
         <tr>
@@ -52,9 +52,9 @@
             <td class="">{{fact.date_facture}}</td>
             <td class="">{{fact.type_facture}}</td>
             <td>{{fact.total}}</td>
-            <td><a href="{% url 'modifier-facture' fact.id %}" class="btn btn-primary btn-sm">Modifier</a> 
-                <a href="" class="btn btn-success btn-sm">Ficher pdf</a> 
-                <a href="{% url 'supprimer-facture' fact.id %}" class="btn btn-danger btn-sm">Supprimer</a>
+            <td><a href="{% url 'modifier-facture' fact.id %}" class="badge btn btn-primary btn-sm">Modifier</a> 
+                <a href="" class="badge btn btn-success btn-sm">Ficher pdf</a> 
+                <a href="{% url 'supprimer-facture' fact.id %}" class="badge btn btn-danger btn-sm">Supprimer</a>
             </td>
             
         </tr>
