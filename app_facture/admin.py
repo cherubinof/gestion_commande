@@ -3,4 +3,9 @@ from.models import Facture
 
 # Register your models here.
 
-admin.site.register(Facture)
+
+
+class FactureAdmin(admin.ModelAdmin):
+    list_display = ['client','commande','date_facture','type_facture']
+    list_filter = ['client']
+admin.site.register(Facture,FactureAdmin)

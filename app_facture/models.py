@@ -17,3 +17,6 @@ class Facture(models.Model):
     total = models.DecimalField(max_digits=10000, decimal_places=2) 
     date_facture = models.DateTimeField(auto_now_add=True)
     commentaire = models.TextField()
+    
+    def __str__(self):
+        return self.type_facture
