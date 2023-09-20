@@ -34,8 +34,8 @@
                     <th scope="col" class="text-primary">Noms</th>
                     <th scope="col" class="text-primary">Date</th>
                     <th scope="col" class="text-primary">Total</th>
-                    <th scope="col" class="text-primary">Paye</th>
                     <th scope="col" class="text-primary">Type facture</th>
+                    <th scope="col" class="text-primary">Paye</th>
                     <th scope="col" class="text-primary">Actions</th>
                 </tr>
             </thead>
@@ -45,13 +45,15 @@
                     <td scope="row" class="text-primary"></td>
                     <td class="text-primary">{{fact.client}}</td>
                     <td class="text-primary">{{fact.date_facture}}</td>
-                    <td class="text-primary"></td>
+                    <td class="text-primary">{{fact.total}}</td>
+                    <td class="text-primary">{{fact.type_facture}}</td>
                     <td class="text-primary">
-                        
-                        
-                        
+                        {% if fact.commande.paye %}
+                        <span>Oui</span>
+                        {% else %}
+                        <span>Non</span>
+                        {% endif %} 
                     </td>
-                    <td class="text-primary"></td>
                     <td>
                         <a href="" title="detail" class="badge text-white bg-success btn">Detail</a>
 
