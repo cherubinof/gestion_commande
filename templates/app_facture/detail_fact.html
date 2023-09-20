@@ -40,11 +40,11 @@
                 </tr>
             </thead>
             <tbody>
-                
+                {% for fact in facture %}
                 <tr>
                     <td scope="row" class="text-primary"></td>
-                    <td class="text-primary"></td>
-                    <td class="text-primary"></td>
+                    <td class="text-primary">{{fact.client}}</td>
+                    <td class="text-primary">{{fact.date_facture}}</td>
                     <td class="text-primary"></td>
                     <td class="text-primary">
                         
@@ -64,7 +64,7 @@
                         </button>
                     </td>
                 </tr>
-                
+                {% endfor %}
             </tbody>
         </table>
     </div>

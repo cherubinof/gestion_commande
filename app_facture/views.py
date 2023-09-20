@@ -1,5 +1,7 @@
 from django.shortcuts import render,redirect
 from .models import Facture
+from app_cmde.models import Commande
+from app_client.models import Client
 from.forms import FactureForm
 
 # Create your views here.
@@ -56,4 +58,10 @@ def supprimer_facture(request,pk):
 
 
 def detail_fact(request):
-    return render(request,'app_facture/detail_fact.html')
+    
+    facture = Facture.objects.all()
+    context = {
+        'facture':facture,
+        
+    }
+    return render(request,'app_facture/detail_fact.html',context)
