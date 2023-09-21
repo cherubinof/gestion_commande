@@ -56,12 +56,18 @@ def supprimer_facture(request,pk):
     }
     return render(request,'app_facture/supprimer_facture.html',context)
 
+def error404(request):
+    return render(request,'app_facture/404.html')
 
-def detail_fact(request):
+
+def detail_fact(request,pk):
+    client = Client.objects.get(id=pk)
+    facture = client.facture_set.all()
     
-    facture = Facture.objects.all()
     context = {
         'facture':facture,
+        'client':client,
+        
         
     }
     return render(request,'app_facture/detail_fact.html',context)

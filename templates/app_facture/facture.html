@@ -52,8 +52,9 @@
             <td class="">{{fact.date_facture}}</td>
             <td class="">{{fact.type_facture}}</td>
             <td>{{fact.total}}</td>
-            <td><a href="{% url 'modifier-facture' fact.id %}" class="badge btn btn-primary btn-sm">Modifier</a> 
-                <a href="" class="badge btn btn-success btn-sm">Ficher pdf</a> 
+            <td>
+                <a href="{% url 'detail-fact' fact.id %}" class="badge btn btn-success btn-sm">Detail</a> 
+                <a href="{% url 'modifier-facture' fact.id %}" class="badge btn btn-primary btn-sm">Modifier</a> 
                 <a href="{% url 'supprimer-facture' fact.id %}" class="badge btn btn-danger btn-sm">Supprimer</a>
             </td>
             
