@@ -8,15 +8,18 @@
 
 {% block content %}
 <br>
-<div class="row mt-12">
-    <div class="col-md">
-        <div class="card card-body">
-            <h1>Vouslez-vous Supprimer ce produit </h1>
-    <form action="{% url 'supprimer-produit' items.id %}" method="post">
-        {% csrf_token %}
-        <a href="{% url 'accueil' %}" class="btn btn-success btn-sm">Non</a>
-        <button type="submit" class="btn btn-danger btn-sm">Oui</button>
-    </form>
+<div class="container">
+    <div class="row my-3">
+        <div class="col-sm-6 offset-sm-3">
+            <div class="card card-body">
+                <h1>Vouslez-vous Supprimer cette commande</h1>
+                <form action="{% url 'supprimer-produit' items.id %}" method="post">
+                    {% csrf_token %}
+                    <a href="{% url 'accueil' %}" class="btn btn-success ">Non</a>
+                    <button type="submit" class="btn btn-danger ">Oui</button>
+                </form>
+            </div>
+            
         </div>
     </div>
 </div>

@@ -7,14 +7,25 @@
 {% block title %}Modifier_produit{% endblock %}
 
 {% block content %}
-
-<h1 class="text-center">Modifier un produit </h1>
-
-
-<form action="" method="post">
-    {% csrf_token %}
-
-    {{form}}
-    <input type="submit" value="engregistrer">
-</form>
+<br>
+<div class="container">
+    <div class="row my-3">
+        <div class="col-sm-6 offset-sm-3">
+            <h3>Ajouter une commande</h3>
+            <hr>
+            <form action="" method="POST" novalidate class="shadow p-5">
+                {% csrf_token %}
+                {% for fm in form %}
+                <div class="form-group mb-3">
+                    {{fm.label_tag}} {{fm}}
+                    <small class="text-danger">{{fm.errors|striptags}}</small>
+                </div>
+                {% endfor %}
+                
+                <input type="submit"  class="btn btn-primary mt-4" value="Valider">
+                
+            </form>
+        </div>
+    </div>
+</div>
 {% endblock %}
