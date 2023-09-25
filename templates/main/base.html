@@ -116,13 +116,18 @@
             }else{
               console.log(id)
               $.ajax({
-                url:'delet_all',
-                mrthod:'post',
+                url:'. ',
+                mrthod:'POST',
                 data:{
                   id,
-                  csrfToken:csrf
+                  csrfmiddlewaretoken:csrf
                 },
-                success
+                success:function(response){
+                  for(var i=0; i < id.length; i++){
+                    $('tr#' +id[i]+ '').css('bacground-color', '#ccc');
+                    ('tr#'+id[i]+ '').fadeout('slow');
+                  }
+                }
               })
             }
           }

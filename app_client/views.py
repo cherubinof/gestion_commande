@@ -9,6 +9,7 @@ from.forms import clientForm
 def list_client(request):
     client = Client.objects.all().order_by('-id')
     total_client = client.count()
+    
     context = {
         'client':client,
         'total_client':total_client
@@ -67,6 +68,12 @@ def supprimer_client(request,pk):
     return render(request,'app_client/supprimer_client.html',context)
 
 
-def suprimmer_all(request):
+def suprimmer_all(request,pk):
+    if request.method =='POST':
+        client_id = request.POST.getlist('id[]')
+        for id in client_id:
+            client = Client.objects.get(id=pk)
+            client.delete()
+            return redirect('list-client')
     return render(request,'app_client/suo_all.html')
 

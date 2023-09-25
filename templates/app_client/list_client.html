@@ -47,7 +47,7 @@
         <tbody>
         {% csrf_token %}  
         {% for cl in client %}
-        <tr>
+        <tr id="{{cl.id}}">
             <td><input type="checkbox" name="client_id[]" value="{{cl.id}}" id="supprimer-client"></td>
             <td class="">{{cl.noms}}</td>
             <td class="">{{cl.telephone}}</td>
