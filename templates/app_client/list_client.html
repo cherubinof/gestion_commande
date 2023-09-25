@@ -13,7 +13,7 @@
                 <h5>Client</h5>
                 <hr>
                 <a href="{% url 'ajout-client' %}" class="btn btn-outline-primary btn-sm btn-block ">Ajouter le client</a>
-                <a href="" class="btn btn-outline-danger btn-sm btn-block mb-2 ">Supprimer les clients</a>
+                <a href="" class="btn btn-outline-danger btn-sm btn-block mb-2 " id="supprimer_btn">Supprimer les clients</a>
             </div>
         </div>
     
@@ -34,16 +34,21 @@
     <div class="card card-body ">
         
     <table class="table table-sm">
-        <tr>
-            <th></th>
-            <th>Noms</th>
-            <th>Telephone</th>
-            <th>Ville</th>
-            <th>Mise a jours</th>
-        </tr>
+        
+        <thead>
+            <tr>
+                <th></th>
+                <th>Noms</th>
+                <th>Telephone</th>
+                <th>Ville</th>
+                <th>Mise a jours</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% csrf_token %}  
         {% for cl in client %}
         <tr>
-            <td><input type="checkbox"></td>
+            <td><input type="checkbox" name="client_id[]" value="{{cl.id}}" id="supprimer-client"></td>
             <td class="">{{cl.noms}}</td>
             <td class="">{{cl.telephone}}</td>
             <td class="">{{cl.ville}}</td>
@@ -51,6 +56,9 @@
             
         </tr>
         {% endfor %}
+        </tbody> 
+       
+        
     </table>
     </div>
 </div>

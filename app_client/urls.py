@@ -7,4 +7,5 @@ urlpatterns = [
     path('ajout_client',views.ajout_client,name='ajout-client'),
     path('modifier_client/<int:pk>',views.modifier_client,name='modifier-client'),
     path('supprimer_client/<int:pk>',views.supprimer_client,name='supprimer-client'),
+    path('delet_all',views.suprimmer_all,name='delete_all'),
 ]

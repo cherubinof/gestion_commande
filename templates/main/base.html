@@ -102,5 +102,33 @@
 
     <!-- js -->
     <script src="{% static 'js/cdn.js' %}"></script>
+    <script>
+      $(document).ready(function(){
+        $('#supprimer_btn').click(function(){
+          if(confirm('est vous sures de vouloir supprimer ce client?')){
+            var id = [];
+            var csrf = $('<input type="hidden" name="csrfmiddlewaretoken" ').val();
+            $(':checkbox:checked').each(function(i){
+              id[i] = $(this).val()
+            })
+            if (id.length === 0){
+              alert('selectionner un client')
+            }else{
+              console.log(id)
+              $.ajax({
+                url:'delet_all',
+                mrthod:'post',
+                data:{
+                  id,
+                  csrfToken:csrf
+                },
+                success
+              })
+            }
+          }
+        })
+      })
+    
+    </script>
   </body>
 </html>

@@ -66,8 +66,7 @@ def detail_fact(request,pk):
     
     context = {
         'facture':facture,
-        'client':client,
-        
+        'client':client
         
     }
     return render(request,'app_facture/detail_fact.html',context)

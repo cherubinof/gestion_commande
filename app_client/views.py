@@ -66,3 +66,7 @@ def supprimer_client(request,pk):
     }
     return render(request,'app_client/supprimer_client.html',context)
 
+
+def suprimmer_all(request):
+    return render(request,'app_client/suo_all.html')
+
